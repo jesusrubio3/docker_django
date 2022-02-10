@@ -1,0 +1,24 @@
+version: '3.1'
+services:
+  db:
+    container_name: servidor_mariadb
+    image: mariadb
+    restart: always
+    environment:
+      MYSQL_DATABASE: django 
+      MYSQL_USER: admin  
+      MYSQL_PASSWORD: admin  
+      MYSQL_ROOT_PASSWORD: asdasd 
+    volumes:
+      - /opt/mariadb:/data/db
+  app:
+    container_name: django
+    image: django_maria
+    restart: always
+    environment:
+      NAME_USER_PYTHON: admin
+      PASSWD_USER_PYTHON: admin
+      HOST_BM_DATABASE: servidor_mariadb
+      NAME_DB_PYTHON: django
+    ports:
+      - 80:80
