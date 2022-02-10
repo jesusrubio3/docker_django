@@ -126,3 +126,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD='django.db.models.AutoField' 
+
+CSRF_TRUSTED_ORIGINS = ["http://tutorialdjango.rubiomartin.es", "https://tutorialdjango.rubiomartin.es"]
