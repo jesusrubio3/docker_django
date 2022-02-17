@@ -18,7 +18,7 @@ pipeline {
         stage('Test')
         {
             steps {
-                sh 'python3 imagen/django_tutorial/manage.py imagen/django_tutorial/polls/test.py'
+                sh 'python3 imagen/django_tutorial/manage.py test'
             }
         }
     }
