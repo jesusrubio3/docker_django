@@ -18,7 +18,7 @@ pipeline {
         stage('Test')
         {
             steps {
-                sh 'cd imagen/django_tutorial/ && ls'
+                sh 'cd imagen/django_tutorial/ && python3 manage.py test'
             }
         }
     }
