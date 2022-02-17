@@ -12,13 +12,13 @@ pipeline {
         }
         stage('Install') {
             steps {
-                sh "ls -la && cat requirements.txt"
+                sh 'pip install -r imagen/django_tutorial/requirements.txt'
             }
         }
         stage('Test')
         {
             steps {
-                sh 'python3 manage.py test'
+                sh 'python3 imagen/django_tutorial/manage.py imagen/django_tutorial/polls/test.py'
             }
         }
     }
