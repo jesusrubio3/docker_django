@@ -27,13 +27,45 @@ pipeline {
         }
         stage("deploy in prodcution") {
             agent any
+            environment {
+                IMAGEN = "jesusrubiomartin/jenkins"
+                USUARIO = 'USER_DOCKERHUB'
+            }
             stages {
                 stage('En la máquina') {
                 
                 steps {
-                    sh 'python3 --version'
+                            git branch: "main", url: 'https://github.com/jesusrubio3/docker_django.git'
+                      }
+                }
+                stage('En la máquinaa') {
+                
+                steps {
+                script {
+                    newApp = docker.build "$IMAGEN:$BUILD_NUMBER"
+                }
+            }
+
+                }
+                stage('En la máquinaaa') {
+                
+                steps {
+                script {
+                    docker.image("$IMAGEN:$BUILD_NUMBER").inside('-u root')
                     }
                 }
+                }
+                stage('En la máquinaaaa') {
+                
+                steps {
+                script {
+                    docker.withRegistry( '', USUARIO ) {
+                        newApp.push()
+                    }
+                }
+            }
+                }
+
             }
         }
     }
