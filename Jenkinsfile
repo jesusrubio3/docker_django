@@ -10,6 +10,11 @@ pipeline {
                  git branch: "main", url: 'https://github.com/jesusrubio3/docker_django.git'
             }
         }
+        stage('Venv') {
+            steps {
+                 sh 'export NAME_USER_PYTHON="admin" PASSWD_USER_PYTHON="admin" HOST_BM_DATABASE="servidor_mariadb" NAME_DB_PYTHON="django"' 
+            }
+        }
         stage('Install') {
             steps {
                 sh 'pip install -r imagen/django_tutorial/requirements.txt'
