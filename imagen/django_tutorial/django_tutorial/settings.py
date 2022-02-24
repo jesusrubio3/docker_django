@@ -1,4 +1,4 @@
-import os
+#import os
 """
 Django settings for django_tutorial project.
 
@@ -75,14 +75,20 @@ WSGI_APPLICATION = 'django_tutorial.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.mysql',
+#       'NAME': os.getenv('NAME_DB_PYTHON'),
+#	'USER': os.getenv('NAME_USER_PYTHON'),
+#	'PASSWORD': os.getenv('PASSWD_USER_PYTHON'),
+#	'HOST': os.getenv('HOST_BM_DATABASE'),
+#	'PORT': '3306',
+#    }
+#}
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.getenv('NAME_DB_PYTHON'),
-	'USER': os.getenv('NAME_USER_PYTHON'),
-	'PASSWORD': os.getenv('PASSWD_USER_PYTHON'),
-	'HOST': os.getenv('HOST_BM_DATABASE'),
-	'PORT': '3306',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
