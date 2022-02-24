@@ -25,6 +25,7 @@ pipeline {
         }
     }
 }
+}
         stage("deploy in prodcution") {
             environment {
         IMAGEN = "jesusrubiomartin/jenkins"
