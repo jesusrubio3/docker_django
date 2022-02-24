@@ -17,7 +17,7 @@ pipeline {
         }
         stage('pr') {
             steps {
-                sh 'echo $NAME_DB_PYTHON'
+                sh 'echo $NAME_USER_PYTHON'
             }
         }
         stage('Install') {
