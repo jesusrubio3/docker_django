@@ -12,12 +12,12 @@ pipeline {
                             git branch: "main", url: 'https://github.com/jesusrubio3/docker_django.git'
                       }
                 }
-                stage('En el contenedor') {
+                stage('En el contenedorr') {
                 steps {
                         sh 'pip install -r imagen/django_tutorial/requirements.txt'
                       }
                 }
-                stage('En el contenedor') {
+                stage('En el contenedorrr') {
                 steps {
                         sh 'cd imagen/django_tutorial/ && python3 manage.py test'
                       }
