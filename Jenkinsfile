@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                git 'https://github.com/jesusrubio3/docker_django.git'
+                 git branch: "main", url: 'https://github.com/jesusrubio3/docker_django.git'
             }
         }
         stage('Install') {
