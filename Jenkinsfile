@@ -2,10 +2,7 @@ pipeline {
     agent none
     stages {
         stage("build and test the project") {
-            agent {
-                docker { image 'python:3'
-                args '-u root:root'
-                }
+            agent { docker { image 'python:3' args '-u root:root' }
             stages {
                 stage('Clone') {
                     steps {
