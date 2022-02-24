@@ -2,23 +2,32 @@ pipeline {
     agent none
     stages {
         stage("build and test the project") {
-            agent { docker { image 'python:3' args '-u root:root' }
+            agent {
+                docker "python:3"
+            }
             stages {
-                stage('Clone') {
-                    steps {
+                stage('En el contenedor') {
+            
+                steps {
                             git branch: "main", url: 'https://github.com/jesusrubio3/docker_django.git'
-                          }
-                    }
-                stage('Install') {
-                    steps {
+                      }
+                steps {
                         sh 'pip install -r imagen/django_tutorial/requirements.txt'
-                           }
-                    }
-                stage('Test') {
-                    steps {
+                      }
+                steps {
                         sh 'cd imagen/django_tutorial/ && python3 manage.py test'
-                          }
-                    }    
+                      }
+                }
+            }
+        }
+        stage("deploy in prodcution") {
+            agent any
+            stages {
+                stage('En la máquina') {
+                
+                steps {
+                    sh 'python3 --version'
+                    }
                 }
             }
         }
