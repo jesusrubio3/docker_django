@@ -17,6 +17,10 @@ pipeline {
         }
         stage('Install') {
             steps {
+                sh 'echo $NAME_DB_PYTHON'
+            }
+        stage('Install') {
+            steps {
                 sh 'pip install -r imagen/django_tutorial/requirements.txt'
             }
         }
