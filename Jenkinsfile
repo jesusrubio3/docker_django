@@ -49,14 +49,6 @@ pipeline {
             }
 
                 }
-                stage('En la máquinaaa') {
-                
-                steps {
-                script {
-                    docker.image("$IMAGEN:$BUILD_NUMBER").inside('-u root')
-                    }
-                }
-                }
                 stage('En la máquinaaaa') {
                 
                 steps {
