@@ -53,7 +53,7 @@ pipeline {
                 
                 steps {
                 script {
-                    docker.image("$IMAGEN:$BUILD_NUMBER").inside('-u root')
+                    docker-compose.image("$IMAGEN:$BUILD_NUMBER").inside('-u root')
                     }
                 }
                 }
