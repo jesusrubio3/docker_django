@@ -44,7 +44,7 @@ pipeline {
                 
                 steps {
                 script {
-                    newApp = docker-compose.build "$IMAGEN:$BUILD_NUMBER"
+                    newApp = docker.build "$IMAGEN:$BUILD_NUMBER"
                 }
             }
 
