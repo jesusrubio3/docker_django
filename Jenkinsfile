@@ -44,7 +44,7 @@ pipeline {
                 
                 steps {
                 script {
-                    newApp = docker.build "$IMAGEN:$BUILD_NUMBER"
+                    newApp = docker-compose.build "$IMAGEN:$BUILD_NUMBER"
                 }
             }
 
@@ -53,7 +53,7 @@ pipeline {
                 
                 steps {
                 script {
-                    docker-compose.image("$IMAGEN:$BUILD_NUMBER").inside('-u root')
+                    docker.image("$IMAGEN:$BUILD_NUMBER").inside('-u root')
                     }
                 }
                 }
