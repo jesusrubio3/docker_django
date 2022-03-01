@@ -3,8 +3,7 @@ pipeline {
     stages {
         stage("build and test the project") {
             agent {
-                docker 'python:3' 
-                args '-u root:root'
+                docker 'python:3' args '-u root:root'
             }
             stages {
                 stage('En el contenedor') {
