@@ -70,7 +70,7 @@ pipeline {
     steps{
         sshagent(credentials : ['clavessh']) {
             sh 'ssh -o StrictHostKeyChecking=no jesus@trajano.rubiomartin.es uptime'
-            sh 'ssh jesus@trajano.rubiomartin.es ./dock.sh'
+            sh 'ssh jesus@trajano.rubiomartin.es && sudo su && ./dock.sh'
             
         }
     }
