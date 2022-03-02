@@ -66,11 +66,15 @@ pipeline {
                 sh "docker rmi $IMAGEN:$BUILD_NUMBER"
                 }
         }
-                stage('conexión') {
-            steps {
-                sh "ssh jesus@trajano.rubiomartin.es && ls "
-                }
+              stage ('Deploy') {
+    steps{
+        sshagent(credentials : ['clavessh']) {
+            sh 'ssh -o StrictHostKeyChecking=no jesus@trajano.rubiomartin.es uptime'
+            sh 'ssh jesus@trajano.rubiomartin.es && ls'
+            
         }
+    }
+}
 
             }
         }
