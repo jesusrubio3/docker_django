@@ -13,7 +13,7 @@ services:
       - /opt/mariadb:/data/db
   app:
     container_name: django
-    image: django_maria
+    image: jenkins
     restart: always
     environment:
       NAME_USER_PYTHON: admin
@@ -21,4 +21,4 @@ services:
       HOST_BM_DATABASE: servidor_mariadb
       NAME_DB_PYTHON: django
     ports:
-      - 80:80
+      - 8082:80
