@@ -72,6 +72,7 @@ pipeline {
             sh 'ssh -o StrictHostKeyChecking=no jesus@trajano.rubiomartin.es uptime'
             sh 'ssh jesus@trajano.rubiomartin.es ./dock.sh'
             sh 'scp docker-compose.yml jesus@trajano.rubiomartin.es:'
+            sh 'ssh jesus@trajano.rubiomartin.es $BUILD_NUMBER>.env'
             sh 'ssh jesus@trajano.rubiomartin.es docker-compose up -d'
             
         }
