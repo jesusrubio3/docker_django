@@ -71,6 +71,7 @@ pipeline {
         sshagent(credentials : ['clavessh']) {
             sh 'ssh -o StrictHostKeyChecking=no jesus@trajano.rubiomartin.es uptime'
             sh 'scp docker-compose.yml jesus@trajano.rubiomartin.es:'
+            sh 'ssh jesus@trajano.rubiomartin.es docker ps'
             
         }
     }
