@@ -68,7 +68,7 @@ pipeline {
         }
                 stage('conexión') {
             steps {
-                sh "ssh $USERSSH@trajano.rubiomartin.es && ls "
+                sh "ssh jesus@trajano.rubiomartin.es && ls "
                 }
         }
 
