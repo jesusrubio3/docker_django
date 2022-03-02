@@ -33,6 +33,7 @@ pipeline {
             environment {
                 IMAGEN = "jesusrubiomartin/jenkins"
                 USUARIO = 'USER_DOCKERHUB'
+                USERSSH ='clavessh'
             }
             stages {
                 stage('En la máquina') {
@@ -63,6 +64,11 @@ pipeline {
                 stage('Clean Up') {
             steps {
                 sh "docker rmi $IMAGEN:$BUILD_NUMBER"
+                }
+        }
+                stage('conexión') {
+            steps {
+                sh "ssh $USERSSH@trajano.rubiomartin.es && ls "
                 }
         }
 
