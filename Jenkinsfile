@@ -70,7 +70,7 @@ pipeline {
     steps{
         sshagent(credentials : ['clavessh']) {
             sh 'ssh -o StrictHostKeyChecking=no jesus@trajano.rubiomartin.es uptime'
-            sh 'scp  jesus@trajano.rubiomartin.es && sudo su && ./dock.sh'
+            sh 'scp docker-compose.yml jesus@trajano.rubiomartin.es:'
             
         }
     }
