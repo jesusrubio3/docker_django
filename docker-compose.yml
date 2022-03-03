@@ -13,7 +13,7 @@ services:
       - /opt/mariadb:/data/db
   app:
     container_name: django
-    image: jesusrubiomartin/jenkins
+    image: jesusrubiomartin/jenkins:$BUILD_NUMBER
     restart: always
     environment:
       NAME_USER_PYTHON: admin
