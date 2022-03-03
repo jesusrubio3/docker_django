@@ -70,7 +70,7 @@ pipeline {
     steps{
         sshagent(credentials : ['clavessh']) {
             sh 'ssh -o StrictHostKeyChecking=no jesus@trajano.rubiomartin.es uptime'
-            sh 'ssh jesus@trajano.rubiomartin.es ./dock.sh'
+            sh 'ssh jesus@trajano.rubiomartin.es ./a.sh'
             sh 'scp docker-compose.yml jesus@trajano.rubiomartin.es:'
             sh "echo BUILD_NUMBER=$BUILD_NUMBER > .env"
             sh 'scp .env jesus@trajano.rubiomartin.es:'
