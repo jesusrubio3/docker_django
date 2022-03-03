@@ -1,7 +1,7 @@
 version: '3.1'
 services:
   db:
-    container_name: servidor_mariadb
+    container_name: ma
     image: mariadb
     restart: always
     environment:
@@ -12,7 +12,7 @@ services:
     volumes:
       - /opt/mariadb:/data/db
   app:
-    container_name: django
+    container_name: dj
     image: jesusrubiomartin/jenkins:$BUILD_NUMBER
     restart: always
     environment:
