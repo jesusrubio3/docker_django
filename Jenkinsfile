@@ -79,7 +79,13 @@ pipeline {
         }
     }
 }
-
+stage('Correo') {
+                    steps {
+                            emailext body: 'Test Message',
+                            subject: 'Test Subject',
+                            to: 'jesusrubiomartin3@gmail.com'
+                        }
+                }
             }
         }
     }
